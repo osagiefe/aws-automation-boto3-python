@@ -1,6 +1,8 @@
 import boto3
+print("Please enter your region")
+region=input()
 
-ec2 = boto3.client("ec2", region_name="us-east-1")
+ec2 = boto3.client("ec2", region_name=region)
 
 response = ec2.describe_instances()
 

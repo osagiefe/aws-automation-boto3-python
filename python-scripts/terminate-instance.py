@@ -21,9 +21,9 @@ ids = [
     for instance in reservation['Instances']
 ]
 
-# Stop instances if any are found
+# terminate instances if any are found
 if ids:
-    ec2.stop_instances(InstanceIds=ids)
-    print("Stopped instances:", ids)
+    ec2.terminate_instances(InstanceIds=ids)
+    print("Terminated instances:", ids)
 else:
     print("No instances found with tag Env=dev")

@@ -1,6 +1,9 @@
 import boto3
 
-ec2 = boto3.client('ec2', region_name='us-east-1')
+print("Please enter your region")
+region=input()
+
+ec2 = boto3.client("ec2", region_name=region)
 
 # Get instances with tag Env=dev
 response = ec2.describe_instances(
